@@ -1,0 +1,42 @@
+.aside {
+    background-color: #2a265e;
+    color: #dddbf2;
+    padding: 1rem;
+    min-height: 100vh;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.navList {
+    margin-top: 1rem;
+    list-style-type: none;
+}
+
+.navListItem {
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.navListItem a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0.5rem;
+}
+
+.navListItem:hover {
+    background-color: #dddbf2;
+    color: #2a265e;
+    font-weight: 700;
+}
+
+.active {
+    background-color: #dddbf2;
+    color: #2a265e;
+    font-weight: 700;
+}

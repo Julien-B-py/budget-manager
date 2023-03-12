@@ -1,0 +1,33 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Transaction {
+  id         String              @id @default(uuid())
+  info       String
+  amount     Float
+  type       TransactionType
+  category   TransactionCategory @relation(fields: [categoryId], references: [id])
+  categoryId String
+  date       DateTime
+  createdAt  DateTime            @default(now())
+  updatedAt  DateTime            @updatedAt
+}
+
+model TransactionCategory {
+  id           String        @id @default(uuid())
+  name         String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  transactions Transaction[]
+}
+
+enum TransactionType {
+  EXPENSE
+  INCOME
+}
