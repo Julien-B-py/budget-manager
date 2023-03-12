@@ -1,6 +1,7 @@
 -- CreateTable
 CREATE TABLE `Transaction` (
     `id` VARCHAR(191) NOT NULL,
+    `info` VARCHAR(191) NOT NULL,
     `amount` DOUBLE NOT NULL,
     `type` ENUM('EXPENSE', 'INCOME') NOT NULL,
     `categoryId` VARCHAR(191) NOT NULL,
